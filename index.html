@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MeoCafe — Quán cà phê mèo cute & chill</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff9eb5;
+      --secondary: #ffcba4;
+      --bg: #fef9f9;
+      --text: #333;
+      --muted: #777;
+      --card: #ffffff;
+      --shadow: 0 8px 20px rgba(0,0,0,0.05);
+      --gradient: linear-gradient(135deg, #ff9eb5, #ffcba4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--gradient);
+      padding: 16px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      z-index: 100;
+    }
+    .brand {
+      font-family: 'Pacifico', cursive;
+      font-size: 26px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand span {
+      font-size: 34px;
+    }
+    nav a {
+      text-decoration: none;
+      margin: 0 12px;
+      color: #fff;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+    .hero-text {
+      flex: 1;
+      animation: fadeInLeft 1.2s;
+    }
+    .hero-text h1 {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .hero-text p {
+      color: var(--muted);
+      margin: 16px 0;
+    }
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+	
+    .hero-img img {
+  width: 80%;          /* thay vì 100% */
+  max-width: 500px;    /* giới hạn tối đa */
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  animation: float 4s ease-in-out infinite;
+}
+
+    /* Sections */
+    section { display: none; }
+    section.active { display: block; animation: fadeIn 1s; }
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+    th { color: var(--primary); }
+
+    /* Contact */
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+      font-family: inherit;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      background: var(--gradient);
+      color: #fff;
+      border-radius: 20px 20px 0 0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes fadeInLeft { from {opacity:0;transform:translateX(-40px);} to {opacity:1;transform:translateX(0);} }
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+	
+	.banner img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.drinks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.drink-item {
+  flex: 1 1 250px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  text-align: center;
+}
+
+.drink-item img {
+  width: 100%;
+  height: 300px;        /* tăng chiều cao khung ảnh */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.drink-item h3 {
+  color: var(--primary);
+  margin: 8px 0;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span>🐾</span> MeoCafe</div>
+    <nav>
+      <a href="#home" class="active">Trang chủ</a>
+      <a href="#about">Giới thiệu</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <section id="home" class="active">
+        <div class="hero">
+    <div class="hero-text">
+      <h1>Cà phê & Mèo — không gian chill</h1>
+      <p>Thưởng thức đồ uống ngon, ngắm mèo siêu cute và tận hưởng những giây phút thư giãn.</p>
+      <button class="btn btn-primary" onclick="location.hash='#about'">Khám phá thêm</button>
+    </div>
+    <div class="hero-img">
+      <img src="https://i.pinimg.com/736x/c7/f6/69/c7f669f83e036f7bc53b6ac8bd3b5d4a.jpg" alt="Cafe Mèo" />
+    </div>
+  </div>
+
+        <div class="card">
+    <h2>Đồ uống nổi bật</h2>
+    <div class="drinks">
+      <div class="drink-item">
+        <img src="https://cdn.shopify.com/s/files/1/0460/0673/0913/files/Catpuccinojpg-2-3-3.jpg?v=1715769963" alt="Catpuccino">
+        <h3>Catpuccino</h3>
+        <p class="price">45.000đ</p>
+        <p>Lớp bọt sữa mềm mịn vẽ thành khuôn mặt mèo xinh xắn, vừa nhìn đã thấy dễ thương, vừa uống lại ngọt béo, thơm dịu. Một tách Catpuccino là sự kết hợp hoàn hảo giữa hương vị và nụ cười 🐱</p>
+      </div>
+      <div class="drink-item">
+        <img src="https://scontent.fsgn22-1.fna.fbcdn.net/v/t51.75761-15/464216842_18037615826231341_3846913664948963648_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFHFgjA9C3pAIAuki5YaKkhQcF5iTbr6RhBwXmJNuvpGLURYVHXcVTukru4cFvIhvIULSWdSrLcfOgn0MpE8Y4H&_nc_ohc=HyWx5HhvtPUQ7kNvwGnajqY&_nc_oc=Admrvc83DCRvUrrlInyqctFEYMQtNYECQAlKyZoDSOo4GJf4ppoCFakkw6XS2r0tp_Kw3c4zaXp4YcXyt8nPhVDR&_nc_zt=23&_nc_ht=scontent.fsgn22-1.fna&_nc_gid=yAHdJhCf4sxaq78wx2Y76w&oh=00_AfU6Ops4wcMSUxsHXJNNTl-cLGLiVQAwn5UPcDQlZylL7w&oe=68B5AC20" alt="Meow Latte">
+        <h3>Meow Latte</h3>
+        <p class="price">40.000đ</p>
+        <p>Ly Latte sóng sánh, lớp sữa mịn màng được vẽ hình mèo dễ thương. Vị cà phê dịu êm hòa cùng sữa ngọt béo, nhẹ nhàng như tiếng “meow” thì thầm bên tai 🐱</p>
+      </div>
+      <div class="drink-item">
+        <img src="https://whiskersandsoda.com/wp-content/uploads/2023/03/Mocha.jpg" alt="Meow Mocha">
+        <h3>Meow Mocha</h3>
+        <p class="price">70.000đ</p>
+        <p>Tách Mocha ngọt ngào như socola, thơm đậm vị cà phê, điểm xuyến chút “meow” đáng yêu. Uống một ngụm là thấy ấm áp, như được một chú mèo nhỏ rúc vào lòng 🐱</p>
+      </div>
+    </div>
+  </div>
+
+        <!-- Góc Game giữ nguyên -->
+  <div class="card">
+    <h2>Góc Game</h2>
+    <table>
+      <tr><th>Tựa</th><th>Thể loại</th><th>Ghi chú</th></tr>
+      <tr><td>Stardew Cafe</td><td>Simulation</td><td>Chill co-op</td></tr>
+      <tr><td>Among Cats</td><td>Party</td><td>Vui cùng bạn bè</td></tr>
+    </table>
+  </div>
+</section>
+
+      <section id="about">
+        <div class="card">
+          <h2>Giới thiệu về MeoCafe</h2>
+          <p>Ra đời từ 2022, MeoCafe là nơi kết hợp giữa tình yêu với mèo và cà phê. Không gian ấm cúng, nhẹ nhàng với góc đọc sách, khu chơi game và nhiều chú mèo dễ thương.</p>
+        </div>
+        <div class="card">
+          <h3>Video giới thiệu</h3>
+          <iframe width="100%" height="300" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card">
+          <h2>Liên hệ</h2>
+          <form onsubmit="sendMail(event)">
+            <input type="text" id="name" placeholder="Họ tên" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" rows="5" placeholder="Nội dung" required></textarea>
+            <button class="btn btn-primary" type="submit">Gửi</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="footer">© 2025 MeoCafe — Cute & Chill</div>
+  
+  <script>
+  const toggleBtn = document.getElementById("themeToggle");
+
+    function route(){
+      const hash = location.hash || '#home';
+      document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+      const link = document.querySelector("nav a[href='"+hash+"']");
+      if(link) link.classList.add('active');
+      document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
+      const target = document.querySelector(hash);
+      if(target) target.classList.add('active');
+      window.scrollTo(0,0);
+    }
+    window.addEventListener('hashchange', route);
+    window.addEventListener('load', route);
+
+    function sendMail(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value;
+      const email=document.getElementById('email').value;
+      const message=document.getElementById('message').value;
+      window.location.href=`mailto:hello@meocafe.vn?subject=Liên hệ từ ${name}&body=${message}%0AEmail: ${email}`;
+    }
+  </script>
+</body>
+</html>
