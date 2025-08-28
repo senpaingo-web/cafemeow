@@ -131,7 +131,7 @@
   }
   .hero-img img {
     width: 80%;
-    max-width: 300px;
+    max-width: 350px;
     border-radius: 60px;
     box-shadow: var(--shadow);
     animation: float 2s ease-in-out infinite;
@@ -144,13 +144,14 @@
   /* Card glassmorphism */
   
   .card {
-  background: rgba(255, 255, 255, 0.7);
+  background: #fff;
   backdrop-filter: blur(12px) saturate(140%);
-  border-radius: 24px;
+  border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  padding: 24px;
+  padding: 20px;
   padding-bottom: 50px;  /* thêm khoảng trống bên dưới */
   margin-bottom: 28px;
+  margin-top: 40px;   /* thêm khoảng trống phía trên để card xuống thấp hơn */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
   
@@ -230,8 +231,8 @@
   
   /* Tăng chiều dọc cho card Đồ uống nổi bật */
 #home .card:first-child {
-  min-height: 650px;   /* chiều cao tối thiểu, bạn chỉnh số này tùy thích */
-  padding-bottom: 60px; /* thêm khoảng trống phía dưới */
+  min-height: 5000px;   /* chiều cao tối thiểu, bạn chỉnh số này tùy thích */
+  padding-bottom: 80px; /* thêm khoảng trống phía dưới */
 }
 
 #about table {
@@ -323,7 +324,7 @@
 <body>
   <header>
   <div id="fur-container"></div>
-  <button id="togglePaw" class="btn-paw">🐾 Tắt chân mèo.</button>
+  <button id="togglePaw" class="btn-paw">🐾 Tắt chân mèo</button>
 <div id="paw-container"></div>
 
   <div id="paw-container"></div>
@@ -346,7 +347,7 @@
       <button class="btn btn-primary" onclick="location.hash='#about'">Khám phá thêm</button>
     </div>
     <div class="hero-img">
-      <img src="https://thumbs.dreamstime.com/b/kawaii-cat-i-need-coffee-vector-illustration-right-meow-isolated-black-background-print-printing-t-shirt-other-170811635.jpg" alt="Cafe Meow" />
+      <img src="https://media.istockphoto.com/id/1406343028/vi/vec-to/logo-m%C3%A8o-v%C3%A0-c%C3%A0-ph%C3%AA-m%C3%A8o-con-c%E1%BA%A7m-t%C3%A1ch-c%C3%A0-ph%C3%AA-u%E1%BB%91ng-v%E1%BB%9Bi-h%C3%ACnh-minh-h%E1%BB%8Da-bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng-vector-ho%E1%BA%A1t.jpg?s=170667a&w=0&k=20&c=B4X1BkDojGT7s4EbvWh7X2-_R11OEEHdeSBJTOJ4RNU=" alt="Cafe Meow" />
     </div>
   </div>
 
@@ -513,7 +514,7 @@ function createPaw() {
 document.getElementById("togglePaw").addEventListener("click", () => {
   pawEffect = !pawEffect;
   const btn = document.getElementById("togglePaw");
-  btn.textContent = pawEffect ? "🐾 Tắt dấu chân" : "🐾 Bật dấu chân";
+  btn.textContent = pawEffect ? "🐾 Tắt chân mèo" : "🐾 Bật chân mèo";
 });
 
 // tự động tạo paw mỗi 1 giây
