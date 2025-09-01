@@ -556,12 +556,17 @@
     window.addEventListener('load', route);
 
     function sendMail(e){
-      e.preventDefault();
-      const name=document.getElementById('name').value;
-      const email=document.getElementById('email').value;
-      const message=document.getElementById('message').value;
-      window.location.href=`mailto:senpaingo@gmail.com?subject=Liên hệ từ ${name}&body=${message}%0AEmail: ${email}`;
-    }
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const email=document.getElementById('email').value;
+  const message=document.getElementById('message').value;
+
+  const subject = encodeURIComponent("Liên hệ từ " + name);
+  const body = encodeURIComponent(message + "\n\nEmail: " + email);
+
+  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=senpaingo@gmail.com&su=${subject}&body=${body}`);
+}
+
 	
 	function createPaw() {
   const paw = document.createElement("div");
