@@ -513,18 +513,17 @@
   </div>
 </section>
 
-      <section id="contact">ư
+      <section id="contact">
   <div class="card contact-card centered">
     <h2>Liên hệ với MeoCafe</h2>
 
     <!-- Thông tin liên hệ -->
     <div class="contact-info">
-      <p>📍 <b>Địa chỉ:</b> 52 Phan Văn Mảng, KP 7, Thị trấn Bến Lức, TP. Tân An</p>
+      <p>📍 <b>Địa chỉ:</b> 52 Phan Văn Mảng, KP 7, Thị trấn Bến Lức TP. Tân An</p>
       <p>📞 <b>Điện thoại:</b> 0867 062 472</p>
       <p>✉ <b>Email:</b> senpaingo@gmail.com</p>
       <p>⏰ <b>Giờ mở cửa:</b> 8:00 – 22:00 (hàng ngày)</p>
     </div>
-<a href="mailto:senpaingo@gmail.com?subject=Test&body=Hello%20Senpai!">Gửi email test</a>
 
     <!-- Form liên hệ -->
     <form class="contact-form" onsubmit="sendMail(event)">
@@ -557,18 +556,12 @@
     window.addEventListener('load', route);
 
     function sendMail(e){
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  const subject = encodeURIComponent("Liên hệ từ " + name);
-  const body = encodeURIComponent(message + "\n\nNgười gửi: " + name + "\nEmail: " + email);
-
-  const mailtoLink = `mailto:senpaingo@gmail.com?subject=${subject}&body=${body}`;
-  window.location.href = mailtoLink;
-}
+      e.preventDefault();
+      const name=document.getElementById('name').value;
+      const email=document.getElementById('email').value;
+      const message=document.getElementById('message').value;
+      window.location.href=`mailto:senpaingo@gmail.com?subject=Liên hệ từ ${name}&body=${message}%0AEmail: ${email}`;
+    }
 	
 	function createPaw() {
   const paw = document.createElement("div");
